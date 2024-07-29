@@ -46,7 +46,7 @@ echo -e "│      Deteniendo y eliminando servicios de Docker Compose...        
 echo -e "└──────────────────────────────────────────────────────────────────────────────┘\e[0m"
 
 docker-compose -f docker/docker-compose-universidades.yaml down --remove-orphans
-docker-compose down -v
+docker-compose -f docker/docker-compose-explorer.yaml down --remove-orphans
 
 # DETENER Y ELIMINAR TODOS LOS CONTENEDORES DE DOCKER ACTIVOS
 echo -e "\e[1;31m"
@@ -247,7 +247,8 @@ echo -e "│  🎯 docker-compose-.yaml                                         
 echo -e "│    ⇢ explorer.universidades.com                                              │"
 echo -e "│    ⇢ explorerdb.universidades.com                                            │"
 echo -e "└──────────────────────────────────────────────────────────────────────────────┘\e[0m"
-docker-compose up -d
+# docker-compose up -d
+docker-compose -f docker/docker-compose-explorer.yaml up -d
 
 # # IP PÚBLICA + PUERTO 8080
 # # "id": "exploreradmin",
